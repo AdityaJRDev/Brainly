@@ -1,8 +1,6 @@
 import mongoose, { model, Schema } from "mongoose";
-
-mongoose.connect(
-  "mongodb+srv://jraditya_db_user:JULEwtohtcmNmcaZ@cluster0.fxnhwht.mongodb.net/?appName=Cluster0",
-);
+import dotenv from "dotenv";
+mongoose.connect(process.env.MONGOOSE_URL as string);
 
 const UserSchema = new Schema({
   username: { type: String, unique: true, required: true },
